@@ -36,4 +36,5 @@ Estenografía/RevealShowApp/
 4. Ocultamiento.py: Se guarda la clase que se encarga de ocultar un mensaje en una imagen por medio de estenografía LSB
 
 Estenografía/RevealShowApp/Imágenes: Aquí se guardan imágenes de prueba
+
 Estenografía/RevealShowApp/Texto: Se almacenan textos de prueba
