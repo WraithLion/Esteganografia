@@ -34,6 +34,7 @@ Estenografía/RevealShowApp/
 2. Imagen.py: Se almacenan los métodos necesarios para el procesamiento de imágenes
 3. Develar.py: En este archivo se encuentra el procedimiento necesario para obtener el mensaje oculto por estenografía LSB de una imagen
 4. Ocultamiento.py: Se guarda la clase que se encarga de ocultar un mensaje en una imagen por medio de estenografía LSB
+5. Mensaje.py: Se almacenan los métodos necesarios para el procesamiento de archivos .txt
 
 Estenografía/RevealShowApp/Imágenes: Aquí se guardan imágenes de prueba
 
