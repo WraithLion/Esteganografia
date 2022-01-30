@@ -1,22 +1,29 @@
 # Programa creado y elaborado por Valencia Cruz Jonathan Josué y Leonardo Aguirre Muñoz
-from tkinter import *
-from tkinter import filedialog
-from pathlib import *
 from PIL import Image
-
+#Importa PIL una biblioteca que permite la edicion de imágenes
+from tkinter import filedialog
+#Importa tkinter una biblioteca gráfica que permite implementar una interfaz gráfica
+from tkinter import messagebox
+#Importa de la misma biblioteca una seccion que permite enviar cuadros de mensajes
+"""Clase Imagen para obtener los detalles de la imagen para su respectiva operacion"""
 class Imagen:
 
-    def cargarimagen(self, nombrefoto):
-        
-        #nombrefoto = filedialog.askopenfilename(filetypes = [
-        #("image", ".jpeg"),
-        #("image", ".png"),
-        #("image", ".jpg")])
-        
-        foto = PurePosixPath(nombrefoto).name
+    def cargarimagen(self):
+        '''Funcion que permite cargar la imagen'''
+        '''imagen: Almacena los datos de la imagen dada'''
+        global imagen
+        '''Primero necesita la imagen para ello solicita la ubicacion para cargar los datos y los almacena en la variable rutaImagen'''
+        rutaImagen = filedialog.askopenfilename(defaultextension='.png',filetypes = [("Formato png", ".png")],title="Selecciona la imagen que deseas utilizar")
+        '''Revisa si la variable rutaImagen tiene informacion'''
+        if  len(rutaImagen)==0:
+            '''Si está vacia envía un mensaje que el usuario debe seleccionar una imagen'''
+            messagebox.showinfo(message="Debes seleccionar una imagen", title="Aviso")
+            '''S'''
+            self.cargarimagen()
+        else:
 
-        imagen= Image.open(foto)
-
+            imagen= Image.open(rutaImagen)
+        '''Regresa los datos de la imagen'''
         return imagen
 
     def obtenerdimensiones(self,datosImagen):
@@ -115,15 +122,4 @@ class Imagen:
 
         return RGBModificado
 
-#imagen= Imagen()
-#datosImagen=imagen.cargarimagen()
-#dimensiones=imagen.obtenerdimensiones(datosImagen)
-#ancho=imagen.obtenerancho(dimensiones)
-#print(ancho)
-#largo=imagen.obtenerlargo(dimensiones)
-#print(largo)
-#Pixeles=imagen.obtenerpixeles(datosImagen)
-#Lista= imagen.PixelesNecesarios(110,Pixeles,largo)
-#print(Lista)
-#ListaRGBBinaria=imagen.PixelEnBinario(Lista)
-#print(ListaRGBBinaria)
+
